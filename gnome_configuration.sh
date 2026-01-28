@@ -101,7 +101,7 @@ gsettings set org.gnome.shell.extensions.tiling-assistant enable-raise-tile-grou
 gsettings set org.gnome.shell.extensions.tiling-assistant window-gap 8
 
 # 2. Bordes redondeados en las ventanas al hacer mosaico
-gsettings set org.gnome.shell.extensions.tiling-assistant active-window-hint 2
+gsettings set org.gnome.shell.extensions.tiling-assistant active-window-hint 1
 
 gsettings set org.gnome.shell.extensions.tiling-assistant active-window-hint-border-size 2
 
