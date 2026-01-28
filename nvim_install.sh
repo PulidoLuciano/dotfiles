@@ -35,7 +35,7 @@ sudo dpkg -i ripgrep_14.1.1-1_amd64.deb
 
 sudo apt install fd-find
 
-npm install tree-sitter-cli
+sudo npm install -g tree-sitter-cli
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
