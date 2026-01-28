@@ -1,0 +1,63 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Paleta Refinada:
+# Marrón Oscuro: #241a24 (Para texto sobre naranja/amarillo y fondos oscuros)
+# Marrón Medio: #3d2b3d
+# Naranja Atardecer: #ef955c
+# Amarillo Crema: #f6d18a
+
+format = """
+[](#3d2b3d)\
+[ ](bg:#3d2b3d fg:#f6d18a)\
+[](fg:#3d2b3d bg:#ef955c)\
+$directory\
+[](fg:#ef955c bg:#f6d18a)\
+$git_branch\
+$git_status\
+[](fg:#f6d18a bg:#241a24)\
+$nodejs$rust$golang$php$python\
+$time\
+[ ](fg:#241a24)\
+\n$character"""
+
+[directory]
+style = "fg:#241a24 bg:#ef955c bold" # Texto oscuro sobre naranja para máximo contraste
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#f6d18a"
+format = '[[ $symbol $branch ](fg:#241a24 bg:#f6d18a)]($style)'
+
+[git_status]
+style = "bg:#f6d18a"
+format = '[[($all_status$ahead_behind )](fg:#241a24 bg:#f6d18a)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#241a24"
+format = '[[ $symbol ($version) ](fg:#ef955c bg:#241a24)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#241a24"
+# El fragmento ($virtualenv) es el que mostrará el nombre del kernel/entorno
+format = '[[ $symbol ($version) ( \($virtualenv\)) ](fg:#ef955c bg:#241a24)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" 
+style = "bg:#241a24"
+format = '[[  $time ](fg:#f6d18a bg:#241a24)]($style)'
+
+[character]
+success_symbol = "[󰄾](bold #ef955c)"
+error_symbol = "[󰄾](bold #3d2b3d)"
