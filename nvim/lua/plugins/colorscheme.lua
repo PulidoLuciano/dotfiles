@@ -76,6 +76,7 @@ return {
 					-- Para que el ícono de la izquierda también sea naranja
 					NoiceCmdlineIcon = { fg = "#ef955c" },
 					NoiceCmdlineIconSearch = { fg = "#f6d18a" },
+					IronNormal = { bg = "#1a141a" }, -- El mismo marrón de tu fondo
 				}
 			end,
 			integrations = {

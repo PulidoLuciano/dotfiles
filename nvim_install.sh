@@ -2,6 +2,10 @@
 
 sudo apt purge neovim
 
+echo -e "${ORANGE} Descargando lenguajes necesarios... ${NC}"
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y git curl zsh unzip build-essential xclip ripgrep fd-find python3-venv nodejs npm golang-go default-jdk pip
+
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
@@ -39,3 +43,19 @@ rm -rf ~/.config/nvim/.git
 rm lazygit
 rm lazygit.tar.gz
 rm ripgrep_14.1.1-1_amd64.deb
+
+# Vincular toda la carpeta de nvim
+DOTFILES_DIR=$(pwd)
+rm -rf ~/.config/nvim
+ln -s "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
+
+echo -e "${BLUE}Instalando herramientas de formateo de código...${NC}"
+# Instalación vía npm (Prettier para Web/React Native)
+sudo npm install -g prettier
+# Instalación vía pip (Black para tus análisis de datos con Pandas)
+pip install black --break-system-packages
+# Instalación de clang-format para C/C++
+sudo apt install -y clang-format
+
+echo -e "${ORANGE}--- Instalación Completada ---${NC}"
+echo -e "Abre Neovim y Mason instalará los LSPs automáticamente."
