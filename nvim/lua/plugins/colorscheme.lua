@@ -52,6 +52,30 @@ return {
 					SnacksDashboardDesc = { fg = "#f6d18a" }, -- Amarillo de los textos
 					SnacksDashboardKey = { fg = "#d4a373" }, -- Teclas en tono tierra
 					SnacksDashboardFooter = { fg = "#7a5c5a", italic = true },
+
+					-- --- Neo-tree (Explorador de archivos) ---
+					-- Fondo del panel lateral (Marrón silueta oscuro)
+					NeoTreeNormal = { bg = "#1a141a", fg = "#f6d18a" },
+					NeoTreeNormalNC = { bg = "#1a141a", fg = "#f6d18a" },
+					-- Archivos y carpetas seleccionadas (Naranja atardecer)
+					NeoTreeCursorLine = { bg = "#3d2b3d", fg = "#ef955c", bold = true },
+					-- Título del panel
+					NeoTreeWinSeparator = { fg = "#ef955c", bg = "#1a141a" },
+					NeoTreeSymbolicLinkTarget = { fg = "#d4a373" },
+
+					-- --- Línea de Comandos y Flotantes (Telescope / Noice) ---
+					-- Fondo de la línea de comandos flotante
+					NormalFloat = { bg = "#241a24" },
+					FloatBorder = { fg = "#ef955c", bg = "#241a24" },
+					-- Mensajes de la línea de comandos (Cmdline)
+					MsgArea = { fg = "#f6d18a", bg = "#1a141a" },
+
+					-- Estilo para la barra de comandos flotante
+					NoiceCmdline = { bg = "#241a24", fg = "#f6d18a" }, -- Marrón oscuro y texto amarillo
+					NoiceCmdlineBorder = { fg = "#ef955c" }, -- Borde Naranja Atardecer
+					-- Para que el ícono de la izquierda también sea naranja
+					NoiceCmdlineIcon = { fg = "#ef955c" },
+					NoiceCmdlineIconSearch = { fg = "#f6d18a" },
 				}
 			end,
 			integrations = {
@@ -59,6 +83,7 @@ return {
 				treesitter = true,
 				notify = true,
 				mini = true,
+				neotree = true,
 				native_lsp = {
 					enabled = true,
 					underlines = {

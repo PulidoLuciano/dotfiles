@@ -24,4 +24,32 @@ return {
 			},
 		},
 	},
+	{
+		"folke/noice.nvim",
+		opts = {
+			cmdline = {
+				view = "cmdline_popup", -- La barra flotante central
+				format = {
+					cmdline = { pattern = "^:", icon = " ", lang = "vim" },
+					search_down = { kind = "search", pattern = "^/", icon = "  ", lang = "regex" },
+				},
+			},
+			views = {
+				cmdline_popup = {
+					position = { row = 5, col = "50%" },
+					size = { width = 60, height = "auto" },
+					border = {
+						style = "rounded", -- Bordes redondeados como tus cápsulas
+						padding = { 0, 1 },
+					},
+					win_options = {
+						winhighlight = {
+							Normal = "NoiceCmdline", -- Fondo del popup
+							FloatBorder = "NoiceCmdlineBorder", -- Borde del popup
+						},
+					},
+				},
+			},
+		},
+	},
 }
