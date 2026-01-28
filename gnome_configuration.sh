@@ -1,6 +1,26 @@
 #!/bin/bash
 echo "Configurando interfaz GNOME Sunset..."
 
+echo -e "${ORANGE}Aplicando Wallpaper Eevee Sunset...${NC}"
+
+# Creamos la carpeta de destino si no existe y movemos la imagen
+mkdir -p ~/Pictures/Wallpapers
+cp ./wallpaper/eevee_sunset.jpg ~/Pictures/Wallpapers/
+
+# Aplicamos la configuración por CLI
+WP_FILE="file://$HOME/Pictures/Wallpapers/eevee_sunset.jpg"
+gsettings set org.gnome.desktop.background picture-uri-dark "$WP_FILE"
+gsettings set org.gnome.desktop.background picture-uri "$WP_FILE"
+gsettings set org.gnome.desktop.background picture-options 'zoom'
+
+DOTFILES=$(pwd)
+mkdir -p "$HOME/.config/gtk-4.0"
+mkdir -p "$HOME/.config/gtk-3.0"
+mkdir -p "$HOME/.themes/Sunset-Luciano/gnome-shell"
+cp "$DOTFILES/themes/gtk.css" "$HOME/.config/gtk-3.0/"
+cp "$DOTFILES/themes/gtk.css" "$HOME/.config/gtk-4.0/"
+cp "$DOTFILES/themes/gnome-shell.css" "$HOME/.themes/Sunset-Luciano/gnome-shell/"
+
 # 1. Centrar ventanas nuevas
 gsettings set org.gnome.mutter center-new-windows true
 

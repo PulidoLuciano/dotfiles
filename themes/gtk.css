@@ -1,0 +1,61 @@
+/* Bordes redondeados agresivos para las ventanas (Match con tu Dock) */
+window.headerbar,
+window.dialog,
+window {
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Quitar la barra superior de la terminal para un look más limpio */
+headerbar {
+  background: rgba(36, 26, 36, 0.85);
+  color: #ef955c; /* Letras naranjas en la barra */
+  border-bottom: 1px solid rgba(239, 149, 92, 0.2);
+}
+
+/* Personalizar las barras de desplazamiento (Scrollbars) para que sean naranjas y finitas */
+scrollbar slider {
+  background-color: #ef955c;
+  border-radius: 20px;
+  min-width: 6px;
+}
+
+/* Color de fondo y transparencia para GNOME Console */
+.titlebar {
+  background-color: rgba(
+    36,
+    26,
+    36,
+    0.85
+  ); /* Tu marrón #241a24 con 85% opacidad */
+}
+.titlebar,
+headerbar,
+UnityDecoration.top {
+  background: rgba(36, 26, 36, 0.75);
+  color: #ef955c;
+}
+
+.titlebar:backdrop,
+headerbar:backdrop {
+  background: rgba(36, 26, 36, 0.75);
+  color: #ef955cee;
+}
+
+/* Fondo de ventana principal */
+window,
+.main-template {
+  background-color: #1e1a1e;
+}
+
+/* Barras laterales (Nautilus) */
+.sidebar,
+.navigation-sidebar {
+  background-color: #241a24;
+}
+
+/* Color de texto para que resalte el naranja */
+label,
+entry {
+  color: #e0d0c0;
+}
