@@ -97,3 +97,6 @@ alias nvimconf='cd ~/.config/nvim && nvim init.lua'
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# Created by `pipx` on 2026-01-28 19:43:12
+export PATH="$PATH:/home/lucianopulido/.local/bin"
