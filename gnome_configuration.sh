@@ -142,5 +142,6 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 flatpak install flathub com.github.GradienceTeam.Gradience -y
 
 cp "./themes/sunset-eevee.json" "~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/"
+echo -e "${RED} Carga el preset de sunset-eevee en Gradience"
 # Recordatorio para el usuario
 flatpak run com.github.GradienceTeam.Gradience
