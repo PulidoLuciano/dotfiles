@@ -13,12 +13,10 @@ gsettings set org.gnome.desktop.background picture-uri-dark "$WP_FILE"
 gsettings set org.gnome.desktop.background picture-uri "$WP_FILE"
 gsettings set org.gnome.desktop.background picture-options 'zoom'
 
+sudo apt install gnome-shell-extension-manager
+
 DOTFILES=$(pwd)
-mkdir -p "$HOME/.config/gtk-4.0"
-mkdir -p "$HOME/.config/gtk-3.0"
 mkdir -p "$HOME/.themes/Sunset-Luciano/gnome-shell"
-cp "$DOTFILES/themes/gtk.css" "$HOME/.config/gtk-3.0/"
-cp "$DOTFILES/themes/gtk.css" "$HOME/.config/gtk-4.0/"
 cp "$DOTFILES/themes/gnome-shell.css" "$HOME/.themes/Sunset-Luciano/gnome-shell/"
 
 # 1. Centrar ventanas nuevas
@@ -133,6 +131,14 @@ sudo apt update
 sudo apt install pipx -y
 pipx install gnome-extensions-cli --system-site-packages
 pipx ensurepath
-source ~/.zshrc
-rehash
+source "$HOME/.bashrc"
+hash -r
 gext install clipboard-indicator@tudmotu.com Vitals@CoreCoding.com color-picker@tuberry caffeine@patapon.info user-theme@gnome-shell-extensions.gcampax.github.com
+
+echo -e "${ORANGE}Instalando Gradience para personalización de ventanas...${NC}"
+# Instalación de Flatpak y Gradience
+sudo apt install -y flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.github.GradienceTeam.Gradience -y
+# Recordatorio para el usuario
+flatpak run com.github.GradienceTeam.Gradience

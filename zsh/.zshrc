@@ -100,3 +100,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # Created by `pipx` on 2026-01-28 19:43:12
 export PATH="$PATH:/home/lucianopulido/.local/bin"
+
+# Created by `pipx` on 2026-01-29 01:10:20
+export PATH="$PATH:/home/hola/.local/bin"

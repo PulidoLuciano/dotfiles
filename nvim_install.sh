@@ -46,8 +46,8 @@ rm ripgrep_14.1.1-1_amd64.deb
 
 # Vincular toda la carpeta de nvim
 DOTFILES_DIR=$(pwd)
-rm -rf ~/.config/nvim
-ln -s "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
+mkdir -p "$HOME/.config/nvim/lua/plugins"
+cp ./nvim/lua/plugins/* "$HOME/.config/nvim/lua/plugins/"
 
 echo -e "${BLUE}Instalando herramientas de formateo de código...${NC}"
 # Instalación vía npm (Prettier para Web/React Native)
