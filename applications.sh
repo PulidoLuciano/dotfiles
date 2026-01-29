@@ -50,7 +50,5 @@ sudo apt-get update
 sudo apt install ./docker-desktop.deb
 rm docker-desktop.deb
 
-systemctl --user enable docker-desktop
-
 #Instalar zen browser
 flatpak install flathub app.zen_browser.zen
