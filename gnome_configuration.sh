@@ -140,5 +140,7 @@ echo -e "${ORANGE}Instalando Gradience para personalización de ventanas...${NC}
 sudo apt install -y flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.github.GradienceTeam.Gradience -y
+
+cp "./themes/sunset-eevee.json" "~/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/"
 # Recordatorio para el usuario
 flatpak run com.github.GradienceTeam.Gradience
